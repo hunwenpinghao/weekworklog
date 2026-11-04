@@ -24,3 +24,6 @@ token.json
 
 # iconset intermediates (keep icns / png masters in build/)
 build/icon.iconset/
+
+.gh-tok*
+
