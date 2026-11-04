@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data:;" />
+  <title>周工作日志</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="mini-cal">
+        <div class="mini-cal-head">
+          <button type="button" class="icon-btn" id="miniPrev" title="上个月">‹</button>
+          <div class="mini-cal-title" id="miniTitle">—</div>
+          <button type="button" class="icon-btn" id="miniNext" title="下个月">›</button>
+        </div>
+        <div class="mini-cal-dows">
+          <span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span>
+        </div>
+        <div class="mini-cal-grid" id="miniGrid"></div>
+      </div>
+      <div class="sidebar-hint">
+        <p>在右侧日历上<strong>点击或拖选</strong>时间格子，即可直接记下做了什么。</p>
+        <button type="button" class="btn soft" id="btnExportSide">导出本周 Markdown</button>
+      </div>
+    </aside>
+
+    <div class="main">
+      <header class="toolbar">
+        <div class="toolbar-left">
+          <button type="button" class="btn" id="btnToday">今天</button>
+          <button type="button" class="icon-btn" id="btnPrev" title="上一周">‹</button>
+          <button type="button" class="icon-btn" id="btnNext" title="下一周">›</button>
+          <div class="range-label" id="rangeLabel">—</div>
+        </div>
+        <div class="toolbar-right">
+          <div class="seg" role="tablist" aria-label="视图">
+            <button type="button" class="seg-btn" data-view="day" id="viewDay">日</button>
+            <button type="button" class="seg-btn active" data-view="week" id="viewWeek">周</button>
+            <button type="button" class="seg-btn" data-view="month" id="viewMonth">月</button>
+          </div>
+          <button type="button" class="btn primary" id="btnExport">导出 Markdown</button>
+        </div>
+      </header>
+
+      <section class="cal-wrap" id="calWrap">
+        <!-- week / day / month views rendered by JS -->
+      </section>
+    </div>
+  </div>
+
+  <!-- create / edit popover -->
+  <div id="popover" class="popover hidden" role="dialog" aria-modal="true">
+    <div class="popover-card">
+      <div class="popover-time" id="popTime">—</div>
+      <input type="text" id="popTitle" class="popover-title" placeholder="做了什么（必填）" maxlength="500" />
+      <textarea id="popNote" class="popover-note" rows="3" placeholder="补充备注（可选）"></textarea>
+      <div class="popover-actions">
+        <button type="button" class="btn danger hidden" id="popDelete" title="删除这条记录">删除</button>
+        <div class="spacer"></div>
+        <button type="button" class="btn" id="popCancel">取消</button>
+        <button type="button" class="btn primary" id="popSave">保存</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+  <script src="app.js"></script>
+</body>
+</html>

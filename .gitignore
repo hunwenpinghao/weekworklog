@@ -1,0 +1,26 @@
+# dependencies & build output
+node_modules/
+dist/
+
+# OS / editor
+.DS_Store
+*.log
+*.swp
+.idea/
+.vscode/
+
+# local runtime / Application Support copies
+data/entries.json
+*.local.json
+
+# secrets / credentials
+.env
+.env.*
+*.pem
+*.p12
+*.key
+credentials.json
+token.json
+
+# iconset intermediates (keep icns / png masters in build/)
+build/icon.iconset/

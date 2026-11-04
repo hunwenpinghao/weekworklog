@@ -1,0 +1,77 @@
+{
+  "name": "week-worklog",
+  "productName": "周工作日志",
+  "version": "1.1.5",
+  "description": "周工作日志桌面应用 — 飞书风格日历周视图，点选格子记事，周末导出 Markdown 周报素材",
+  "main": "electron/main.js",
+  "author": "灵灵九",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --mac --x64 --dir",
+    "dist": "electron-builder --mac --x64"
+  },
+  "build": {
+    "appId": "cn.aibee.week-worklog",
+    "productName": "周工作日志",
+    "copyright": "Copyright © 2026",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "electron/**/*",
+      "static/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "data",
+        "to": "seed-data",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": [
+        {
+          "target": "dir",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "dmg",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "identity": null,
+      "gatekeeperAssess": false,
+      "hardenedRuntime": false,
+      "icon": "build/icon.icns"
+    },
+    "dmg": {
+      "title": "周工作日志",
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    }
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  }
+}
