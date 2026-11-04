@@ -3,7 +3,7 @@
 macOS Electron 周历工作日志（飞书风格周视图）。
 
 - **仓库**：[hunwenpinghao/weekworklog](https://github.com/hunwenpinghao/weekworklog)
-- **下载**： [Releases · v1.1.5](https://github.com/hunwenpinghao/weekworklog/releases/tag/v1.1.5)（DMG：`周工作日志-1.1.5.dmg`）
+- **下载**： [Releases · v1.1.5](https://github.com/hunwenpinghao/weekworklog/releases/tag/v1.1.5)（DMG：[`WeekWorklog-1.1.5.dmg`](https://github.com/hunwenpinghao/weekworklog/releases/download/v1.1.5/WeekWorklog-1.1.5.dmg)）
 
 完整的 Mac 桌面应用（Electron）。界面参考飞书日历周视图：在格子上**点击或拖选**时间即可记事，色块直接显示在日历上；周末可导出 Markdown 交给智能体写周报。
 
